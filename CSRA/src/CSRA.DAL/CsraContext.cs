@@ -12,7 +12,7 @@ namespace CSRA.DAL
         public DbSet<Prisoner> Prisoners { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        { 
         }
     }
 }
