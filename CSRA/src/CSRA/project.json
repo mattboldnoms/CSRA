@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-CSRA-774381cb-17d2-4354-97e9-960b76883892",
 
   "dependencies": {
@@ -43,7 +43,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "Microsoft.Extensions.Configuration.CommandLine": "1.1.0"
   },
 
   "tools": {
