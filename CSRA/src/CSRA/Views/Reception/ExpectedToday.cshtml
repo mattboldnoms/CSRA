@@ -1,0 +1,73 @@
+@model IEnumerable<CSRA.Models.ReceptionViewModels.PrisonerListItemViewModel>
+
+@{
+    ViewBag.Title = "ExpectedToday";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="heading-xlarge">
+    Expected Today
+    <span class="heading-secondary">
+        @DateTime.Now.ToString("dd MMM yyyy") - HMP Leeds
+    </span>
+</h1>
+
+<table class="check-your-answers">
+
+    <thead>
+        <tr>
+            <th>
+                Photo
+            </th>
+            <th>
+                NOMIS ID
+            </th>
+            <th>
+                Firstname
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                DoB
+            </th>
+            <th>
+                From Location
+            </th>
+            <th>
+                Select
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var prisoner in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Content/Images/person.jpg" />
+                </td>
+
+                <td>@prisoner.NomisId</td>
+
+                <td>@prisoner.Firstname</td>
+
+                <td>@prisoner.Surname</td>
+
+                <td>@prisoner.DoB.ToString("dd/MM/yyyy")</td>
+
+                <td>@prisoner.FromLocation</td>
+
+                <td>
+                    <a href="#">
+                        Edit <span class="visuallyhidden">Exporter name</span>
+                    </a>
+                </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
