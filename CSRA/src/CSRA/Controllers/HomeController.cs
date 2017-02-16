@@ -10,7 +10,7 @@ namespace CSRA.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("ExpectedToday", "Reception");
         }
 
         public IActionResult About()
