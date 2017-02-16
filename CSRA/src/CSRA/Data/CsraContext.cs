@@ -5,7 +5,7 @@ namespace CSRA.Data
 {
     public class CsraContext : DbContext
     {
-        public CsraContext() : base()
+        public CsraContext(DbContextOptions options) : base(options)
         {
         }
 

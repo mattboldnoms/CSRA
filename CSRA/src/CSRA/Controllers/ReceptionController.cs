@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CSRA.Models.ReceptionViewModels;
 using CSRA.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CSRA.Controllers
 {
@@ -22,7 +23,7 @@ namespace CSRA.Controllers
         {
             var vm = new List<PrisonerListItemViewModel>();
 
-            var prisoners = _context.Prisoners.ToList();
+            var prisoners = _context.Prisoners.Include(p => p.FromLocation).ToList();
 
             foreach (var prisoner in prisoners)
             {
