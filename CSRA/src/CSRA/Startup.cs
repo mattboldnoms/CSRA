@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +8,10 @@ using Microsoft.Extensions.Logging;
 using CSRA.Data;
 using CSRA.Models;
 using CSRA.Services;
+using CSRA.Repository.IRepository;
+using CSRA.Services.IServices;
+using CSRA.Repository;
+using AutoMapper;
 
 namespace CSRA
 {
@@ -47,7 +47,11 @@ namespace CSRA
                 .AddEntityFrameworkStores<CsraContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddScoped<IPrisonerRepository, PrisonerRepository>();
+            services.AddScoped<IPrisonerService, PrisonerService>();
+
             services.AddMvc();
+            services.AddAutoMapper();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

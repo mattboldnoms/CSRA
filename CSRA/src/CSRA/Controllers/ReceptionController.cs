@@ -6,16 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using CSRA.Models.ReceptionViewModels;
 using CSRA.Data;
 using Microsoft.EntityFrameworkCore;
+using CSRA.Services.IServices;
+using AutoMapper;
 
 namespace CSRA.Controllers
 {
     public class ReceptionController : Controller
     {
-        private readonly CsraContext _context;
+        private CsraContext context;
+        private IPrisonerService prisonerService;
 
-        public ReceptionController(CsraContext context)
+        public ReceptionController(CsraContext context, IPrisonerService prisonerService)
         {
-            _context = context;
+            this.context = context;
+            this.prisonerService = prisonerService;
         }
 
         // GET: Reception
@@ -23,18 +27,11 @@ namespace CSRA.Controllers
         {
             var vm = new List<PrisonerListItemViewModel>();
 
-            var prisoners = _context.Prisoners.Include(p => p.FromLocation).ToList();
+            var prisoners = this.prisonerService.GetAllPrisoners();
 
             foreach (var prisoner in prisoners)
             {
-                var prisonerVm = new PrisonerListItemViewModel();
-
-                prisonerVm.Firstname = prisoner.Firstname;
-                prisonerVm.Surname = prisoner.LastName;
-                prisonerVm.NomisId = prisoner.NomisId;
-                prisonerVm.Id = prisoner.PrisonerID;
-                prisonerVm.DoB = prisoner.DoB;
-                prisonerVm.FromLocation = prisoner.FromLocation.Name;
+                var prisonerVm = Mapper.Map<PrisonerListItemViewModel>(prisoner);
 
                 vm.Add(prisonerVm);
             }
