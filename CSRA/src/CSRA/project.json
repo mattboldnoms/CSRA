@@ -3,7 +3,7 @@
 
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "platform"
     },
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
@@ -45,10 +45,12 @@
       "type": "build"
     },
     "Microsoft.Extensions.Configuration.CommandLine": "1.1.0",
-    "CSRA.DAL": "1.0.0-*",
     "Microsoft.EntityFrameworkCore": "1.0.1",
     "AutoMapper": "5.2.0",
-    "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.2.0"
+    "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.2.0",
+    "CSRA.Application": "1.0.0-*",
+    "CSRA.Application.Integration": "1.0.0-*",
+    "CSRA.Data": "1.0.0-*"
   },
 
   "tools": {

@@ -1,5 +1,5 @@
-﻿using CSRA.Data.DataModels;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using CSRA.Data.Entities;
 
 namespace CSRA.Data
 {

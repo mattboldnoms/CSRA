@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CSRA.DAL.Models
+namespace CSRA.Data.Entities
 {
     public class Prisoner
     {
-        public int PrisonerID { get; set; }
+        public int PrisonerId { get; set; }
+
         public string LastName { get; set; }
-        public string Firstname { get; set; }
+
+        public string FirstName { get; set; }
+
         public DateTime ReceptionDate { get; set; }
 
         public string NomisId { get; set; }

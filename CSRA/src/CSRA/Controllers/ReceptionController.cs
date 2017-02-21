@@ -6,37 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using CSRA.Models.ReceptionViewModels;
 using CSRA.Data;
 using Microsoft.EntityFrameworkCore;
-using CSRA.Services.IServices;
 using AutoMapper;
+using CSRA.Application.UseCases.Prisoners;
 
 namespace CSRA.Controllers
 {
     public class ReceptionController : Controller
     {
-        private CsraContext context;
-        private IPrisonerService prisonerService;
+        private IPrisonerInteractor prisonerInteractor;
 
-        public ReceptionController(CsraContext context, IPrisonerService prisonerService)
+        public ReceptionController(IPrisonerInteractor prisonerInteractor)
         {
-            this.context = context;
-            this.prisonerService = prisonerService;
+            this.prisonerInteractor = prisonerInteractor;
         }
 
         // GET: Reception
-        public ActionResult ExpectedToday()
+        public async Task<ActionResult> ExpectedToday()
         {
-            var vm = new List<PrisonerListItemViewModel>();
+            var response = await this.prisonerInteractor.GetPrisonersExpectedToday();
 
-            var prisoners = this.prisonerService.GetAllPrisoners();
-
-            foreach (var prisoner in prisoners)
-            {
-                var prisonerVm = Mapper.Map<PrisonerListItemViewModel>(prisoner);
-
-                vm.Add(prisonerVm);
-            }
-
-            return View(vm);
+            return View(response.Prisoners);
         }
 
         public ActionResult AddPrisoner()

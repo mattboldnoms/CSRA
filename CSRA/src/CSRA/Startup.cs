@@ -8,9 +8,6 @@ using Microsoft.Extensions.Logging;
 using CSRA.Data;
 using CSRA.Models;
 using CSRA.Services;
-using CSRA.Repository.IRepository;
-using CSRA.Services.IServices;
-using CSRA.Repository;
 using AutoMapper;
 
 namespace CSRA
@@ -47,8 +44,9 @@ namespace CSRA
                 .AddEntityFrameworkStores<CsraContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddScoped<IPrisonerRepository, PrisonerRepository>();
-            services.AddScoped<IPrisonerService, PrisonerService>();
+            services.AddTransient<CsraContext>();
+
+            services.RegisterApplicationDependencies();
 
             services.AddMvc();
             services.AddAutoMapper();

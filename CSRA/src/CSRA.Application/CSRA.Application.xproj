@@ -7,8 +7,8 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>3f8ce529-17b8-40d4-9cc1-688ef12eb2a9</ProjectGuid>
-    <RootNamespace>CSRA.DAL</RootNamespace>
+    <ProjectGuid>8187b426-d20f-4c4d-b585-87be3687452e</ProjectGuid>
+    <RootNamespace>CSRA.Application</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>

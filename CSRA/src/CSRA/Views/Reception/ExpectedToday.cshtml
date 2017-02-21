@@ -1,4 +1,4 @@
-@model IEnumerable<CSRA.Models.ReceptionViewModels.PrisonerListItemViewModel>
+@model IEnumerable<CSRA.Application.UseCases.Prisoners.Prisoner>
 
 @{
     ViewBag.Title = "ExpectedToday";
@@ -51,11 +51,11 @@
 
                 <td>@prisoner.NomisId</td>
 
-                <td>@prisoner.Firstname</td>
+                <td>@prisoner.FirstName</td>
 
-                <td>@prisoner.Surname</td>
+                <td>@prisoner.LastName</td>
 
-                <td>@prisoner.DoB.ToString("dd/MM/yyyy")</td>
+                <td>@prisoner.DateOfBirth.ToString("dd/MM/yyyy")</td>
 
                 <td>@prisoner.FromLocation</td>
 

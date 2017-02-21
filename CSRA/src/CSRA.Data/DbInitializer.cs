@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CSRA.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CSRA.Data.DataModels;
 
 namespace CSRA.Data
 {
@@ -18,15 +18,14 @@ namespace CSRA.Data
                 return;   // DB has been seeded
             }
 
-            var prisoners = new Prisoner[]
+            var prisoners = new[]
             {
-            new Prisoner{Firstname="Carson",LastName="Alexander", NomisId="1"},
-            new Prisoner{Firstname="Billy",LastName="Boggins", NomisId="2"}
+                new Prisoner { FirstName = "Carson", LastName = "Alexander", NomisId="1" },
+                new Prisoner { FirstName = "Billy", LastName = "Boggins", NomisId="2" }
             };
-            foreach (Prisoner p in prisoners)
-            {
-                context.Prisoners.Add(p);
-            }
+
+            context.Prisoners.AddRange(prisoners);
+
             context.SaveChanges();
             
         }
