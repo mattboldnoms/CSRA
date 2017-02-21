@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Procfile.txt = Procfile.txt
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CSRA", "src\CSRA\CSRA.xproj", "{F8C0DD04-74FA-4864-A486-B8F2204B93E2}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CSRA.Web", "src\CSRA.Web\CSRA.Web.xproj", "{F8C0DD04-74FA-4864-A486-B8F2204B93E2}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CSRA.Data", "src\CSRA.Data\CSRA.Data.xproj", "{3F8CE529-17B8-40D4-9CC1-688EF12EB2A9}"
 EndProject
