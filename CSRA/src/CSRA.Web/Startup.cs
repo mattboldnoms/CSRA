@@ -9,6 +9,7 @@ using CSRA.Data;
 using CSRA.Models;
 using CSRA.Services;
 using AutoMapper;
+using CSRA;
 
 namespace CSRA
 {
@@ -46,7 +47,7 @@ namespace CSRA
 
             services.AddTransient<CsraContext>();
 
-            services.RegisterApplicationDependencies();
+            services.RegisterApplicationDependencies(Configuration);
 
             services.AddMvc();
             services.AddAutoMapper();

@@ -4,6 +4,7 @@
   "dependencies": {
     "CSRA.Application": "1.0.0-*",
     "CSRA.Data": "1.0.0-*",
+    "CSRA.SingleOffenderId": "1.0.0-*",
     "NETStandard.Library": "1.6.0"
   },
 

@@ -4557,6 +4557,7 @@
         "dependencies": {
           "CSRA.Application": "1.0.0",
           "CSRA.Data": "1.0.0",
+          "CSRA.SingleOffenderId": "1.0.0",
           "NETStandard.Library": "1.6.0"
         },
         "compile": {
@@ -4578,6 +4579,21 @@
         },
         "runtime": {
           "netstandard1.6/CSRA.Data.dll": {}
+        }
+      },
+      "CSRA.SingleOffenderId/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "compile": {
+          "netstandard1.6/CSRA.SingleOffenderId.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/CSRA.SingleOffenderId.dll": {}
         }
       }
     }
@@ -11495,6 +11511,11 @@
       "type": "project",
       "path": "../CSRA.Data/project.json",
       "msbuildProject": "../CSRA.Data/CSRA.Data.xproj"
+    },
+    "CSRA.SingleOffenderId/1.0.0": {
+      "type": "project",
+      "path": "../CSRA.SingleOffenderId/project.json",
+      "msbuildProject": "../CSRA.SingleOffenderId/CSRA.SingleOffenderId.xproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -48,10 +48,9 @@
     "Microsoft.EntityFrameworkCore": "1.0.1",
     "AutoMapper": "5.2.0",
     "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.2.0",
+    "CSRA.Data": "1.0.0-*",
     "CSRA.Application": "1.0.0-*",
-    "CSRA.Application.Integration": "1.0.0-*",
-    "CSRA.Data": "1.0.0-*"
-  },
+    "CSRA.Application.Integration": "1.0.0-*" },
 
   "tools": {
     "BundlerMinifier.Core": "2.0.238",
