@@ -25,6 +25,8 @@ namespace CSRA.Application.UseCases.Prisoners
                 response.Prisoners.Add(prisoner);
             }
 
+            var identities = await this.prisonerRepository.SearchNomisIdentities("smith");
+
             return response;
         }
     }

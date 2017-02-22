@@ -12,5 +12,7 @@ namespace CSRA.SingleOffenderId
         Task<IEnumerable<Offender>> GetOffenders(int page, int pageSize, DateTime updatedAfter);
 
         Task<Offender> GetOffender(string id);
+
+        Task<IEnumerable<NomisIdentity>> SearchIdentities(int page, int pageSize, string surname);
     }
 }

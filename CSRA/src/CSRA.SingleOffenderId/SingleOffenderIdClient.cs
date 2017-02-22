@@ -33,5 +33,12 @@ namespace CSRA.SingleOffenderId
             var offenders = await baseClient.Get<IEnumerable<Offender>>(uri);
             return offenders;
         }
+
+        public async Task<IEnumerable<NomisIdentity>> SearchIdentities(int page, int pageSize, string surname)
+        {
+            var uri = $"api/identities/search/?page={page}&per_page={pageSize}&surname={surname}";
+            var identities = await baseClient.Get<IEnumerable<NomisIdentity>>(uri);
+            return identities;
+        }
     }
 }

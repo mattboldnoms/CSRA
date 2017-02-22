@@ -8,5 +8,7 @@ namespace CSRA.Application.UseCases.Prisoners
     public interface IPrisonerRepository
     {
         Task<IList<Prisoner>> GetPrisonersExpectedToday();
+
+        Task<IList<Prisoner>> SearchNomisIdentities(string surname);
     }
 }

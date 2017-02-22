@@ -24,7 +24,7 @@ namespace CSRA.Controllers
         public async Task<ActionResult> ExpectedToday()
         {
             var response = await this.prisonerInteractor.GetPrisonersExpectedToday();
-
+            
             return View(response.Prisoners);
         }
 
