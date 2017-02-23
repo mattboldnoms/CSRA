@@ -1,0 +1,14 @@
+﻿@model CSRA.Models.ReceptionViewModels.NOMISIdentitySearchViewModel
+
+<h1 class="heading-xlarge">
+    Search for existing offender
+</h1>
+
+<form asp-controller="Reception" asp-action="SearchPrisoners">
+    <div class="form-group">
+        <label class="form-label" asp-for="Surname">Full name</label>
+        <input class="form-control" type="text" asp-for="Surname">
+        <input class ="button" type="submit" value="Search" />
+    </div>
+</form>
+

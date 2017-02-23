@@ -9,5 +9,7 @@ namespace CSRA.Application.UseCases.Prisoners
     public interface IPrisonerInteractor
     {
         Task<GetPrisonersExpectedTodayResponse> GetPrisonersExpectedToday();
+
+        Task<SearchNomisIdentitiesResponse> SearchNomisIdentities(string surname);
     }
 }

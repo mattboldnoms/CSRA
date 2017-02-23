@@ -32,5 +32,18 @@ namespace CSRA.Controllers
         {
             return View();
         }
+
+        public ActionResult SearchPrisoners()
+        {
+            return View(new NOMISIdentitySearchViewModel());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> SearchPrisoners(string Surname)
+        {
+            var response = await this.prisonerInteractor.SearchNomisIdentities(Surname);
+
+            return View(response);
+        }
     }
 }

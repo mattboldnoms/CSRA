@@ -18,7 +18,5 @@ namespace CSRA.Application.UseCases.Prisoners
         public string NomisId { get; set; }
 
         public DateTime DateOfBirth { get; set; }
-
-        public string FromLocation { get; set; }
     }
 }

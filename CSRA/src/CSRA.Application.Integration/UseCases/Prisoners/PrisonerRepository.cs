@@ -45,8 +45,7 @@ namespace CSRA.Application.Integration.UseCases.Prisoners
                 LastName = entity.LastName,
                 NomisId = entity.NomisId,
                 DateOfBirth = entity.DoB,
-                ReceptionDate = entity.ReceptionDate,
-                FromLocation = entity.FromLocation?.Name
+                ReceptionDate = entity.ReceptionDate
             };
         }
 

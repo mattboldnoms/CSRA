@@ -24,8 +24,20 @@ namespace CSRA.Application.UseCases.Prisoners
             {
                 response.Prisoners.Add(prisoner);
             }
+            
+            return response;
+        }
 
-            var identities = await this.prisonerRepository.SearchNomisIdentities("smith");
+        public async Task<SearchNomisIdentitiesResponse> SearchNomisIdentities(string surname)
+        {
+            var response = new SearchNomisIdentitiesResponse();
+
+            var identities = await this.prisonerRepository.SearchNomisIdentities(surname);
+
+            foreach (var prisoner in identities)
+            {
+                response.SearchResults.Add(prisoner);
+            }
 
             return response;
         }
